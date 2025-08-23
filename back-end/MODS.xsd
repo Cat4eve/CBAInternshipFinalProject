@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="mods">
+    <xs:complexType>
+      <xs:sequence>
+
+        <!-- 1. Փոխանցման կամ ստացման բնույթ -->
+        <xs:element name="transferTypeInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="transferType" type="TransferTypeControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 2. Փոխանցողի կամ ստացողի իրավական կարգավիճակ -->
+        <xs:element name="legalStatusInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="legalStatus" type="LegalStatusControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 3. Գործարքի տեսակ -->
+        <xs:element name="transactionTypeInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="transactionType" type="TransactionTypeControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 4. Փոխանցման կամ ստացման եղանակ -->
+        <xs:element name="methodOfTransferInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="methodOfTransfer" type="MethodOfTransferControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 5. Փոխանցման կամ ստացման միջոց կամ համակարգ -->
+        <xs:element name="transferSystemInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="transferSystem" type="TransferSystemFlexible"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 6. Փոխանցման կամ ստացման կատարման համար կիրառվող կապի միջոց -->
+        <xs:element name="communicationTypeInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="communicationType" type="CommunicationTypeControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 7. Փոխանցման մարզ  -->
+        <xs:element name="senderRegionInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="senderRegion" type="SenderRegionControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 8. Ստացման մարզ   -->
+        <xs:element name="receiverRegionInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="receiverRegion" type="ReceiverRegionControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+
+        <!-- 9. Փոխանցման կամ ստացման երկրի կոդ -->
+        <xs:element name="ISO3166_1Alpha3CountriesInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ISO3166_1Alpha3Countries" type="ISO3166_1Alpha3CountriesControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 10. Փոխանցման կամ ստացման գումար -->
+        <xs:element name="moneyInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="money" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        
+        <!-- 11. Փոխանցման կամ ստացման արժույթի կոդ -->
+        <xs:element name="ISO4217CurrenciesInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ISO4217Currencies" type="ISO4217CurrenciesControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 12. Փոխանցման կամ ստացման գումարն արտահայտված ԱՄՆ դոլարով (հազար դոլար) -->
+        <xs:element name="moneyToUSDInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="moneyToUSD" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 13. Փոխանցման կամ ստացման գումարի մեծության դասակարգիչ (ԱՄՆ դոլարին համարժեք) -->
+        <xs:element name="sizeClassifierInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sizeClassifier" type="SizeClassifierControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 14. Փոխանցող կամ ստացող իրավաբանական անձի անվանում -->
+        <xs:element name="legalEntityNameInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="legalEntityName" type="LegalEntityNameFlexible"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 15. Փոխանցող կամ ստացող իրավաբանական անձի  ՀՎՀՀ -->
+        <xs:element name="taxPayerRegistrationNumberInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="taxPayerRegistrationNumber" type="TaxPayerRegistrationNumberFlexible"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 16. Փոխանցողի կամ ստացողի հատվածային պատկանելիություն -->
+        <xs:element name="segmentMembershipInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="segmentMembership" type="SegmentMembershipControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 17. Փոխանցողի կամ ստացողի ռեզիդենտության երկիր -->
+        <xs:element name="residencyInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="residency" type="ResidencyFlexible"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 18. Փոխանցման կամ ստացման գործարքի կողմ հանդիսացող իրավաբանական անձի անվանում -->
+        <xs:element name="sideLegalEntityNameInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sideLegalEntityName" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 19. Փոխանցման կամ ստացման գործարքի կողմ հանդիսացողի ռեզիդենտության երկիր -->
+        <xs:element name="sideResidencyInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sideResidency" type="ResidencyFlexible"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        
+        <!-- 20. Փոխանցման կամ ստացման գործարքի կողմ հանդիսացողի իրավական կարգավիճակ -->
+        <xs:element name="sideLegalStatusInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sideLegalStatus" type="LegalStatusControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 21. Փոխանցման կամ ստացման նպատակի դասակարգում -->
+        <xs:element name="intentClassifierInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="intentClassifier" type="IntentClassifierControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 22. Փոխանցման կամ ստացման նպատակի կոդ -->
+        <xs:element name="intentCodeInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="intentCode" type="IntentCodeControlled"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 23. Փոխանցման կամ ստացման քանակ -->
+        <xs:element name="transferAmountInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="transferAmount" type="xs:int"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- 24. Փոխանցման կամ ստացման դիմաց վճարված միջնորդավճար -->
+        <xs:element name="sidePaymentInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sidePayment" type="xs:int"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Controlled Types -->
+  <xs:simpleType name="TransferTypeControlled">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="international"/>
+      <xs:enumeration value="intercountry"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="LegalStatusControlled">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="legalEntity"/>
+      <xs:enumeration value="naturalPerson"/>
+      <xs:enumeration value="solePropriator"/>
+      <xs:enumeration value="notUsed"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TransactionTypeControlled">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="sent"/>
+      <xs:enumeration value="received"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="MethodOfTransferControlled">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="bankAccount"/>
+      <xs:enumeration value="recordAccount"/>
+      <xs:enumeration value="cash"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TransferSystemFlexible">
+    <xs:union memberTypes="TransferSystemControlled xs:string"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="TransferSystemControlled">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="correspondentAccounts"/>
+      <xs:enumeration value="foreignBranches"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CommunicationTypeControlled">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SWIFT"/>
+      <xs:enumeration value="internet"/>
+      <xs:enumeration value="specialLine"/>
+      <xs:enumeration value="SPFS"/>
+      <xs:enumeration value="fax"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SenderRegionControlled">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="yerevan"/>
+      <xs:enumeration value="aragatsotn"/>
+      <xs:enumeration value="ararat"/>
+      <xs:enumeration value="armavir"/>
+      <xs:enumeration value="gegharkunik"/>
+      <xs:enumeration value="kotayk"/>
+      <xs:enumeration value="lori"/>
+      <xs:enumeration value="shirak"/>
+      <xs:enumeration value="syunik"/>
+      <xs:enumeration value="tavush"/>
+      <xs:enumeration value="vayotsDzor"/>
+      <xs:enumeration value="notUsed"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="ReceiverRegionControlled">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="yerevan"/>
+      <xs:enumeration value="aragatsotn"/>
+      <xs:enumeration value="ararat"/>
+      <xs:enumeration value="armavir"/>
+      <xs:enumeration value="gegharkunik"/>
+      <xs:enumeration value="kotayk"/>
+      <xs:enumeration value="lori"/>
+      <xs:enumeration value="shirak"/>
+      <xs:enumeration value="syunik"/>
+      <xs:enumeration value="tavush"/>
+      <xs:enumeration value="vayotsDzor"/>
+      <xs:enumeration value="withoutAddress"/>
+      <xs:enumeration value="notUsed"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+<xs:simpleType name="ISO3166_1Alpha3CountriesControlled">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="AFG"/>
+    <xs:enumeration value="ALA"/>
+    <xs:enumeration value="ALB"/>
+    <xs:enumeration value="DZA"/>
+    <xs:enumeration value="ASM"/>
+    <xs:enumeration value="AND"/>
+    <xs:enumeration value="AGO"/>
+    <xs:enumeration value="AIA"/>
+    <xs:enumeration value="ATA"/>
+    <xs:enumeration value="ATF"/>
+    <xs:enumeration value="ATG"/>
+    <xs:enumeration value="ARG"/>
+    <xs:enumeration value="ARM"/>
+    <xs:enumeration value="ABW"/>
+    <xs:enumeration value="AUS"/>
+    <xs:enumeration value="AUT"/>
+    <xs:enumeration value="AZE"/>
+    <xs:enumeration value="BDI"/>
+    <xs:enumeration value="BEL"/>
+    <xs:enumeration value="BEN"/>
+    <xs:enumeration value="BES"/>
+    <xs:enumeration value="BFA"/>
+    <xs:enumeration value="BGD"/>
+    <xs:enumeration value="BGR"/>
+    <xs:enumeration value="BHR"/>
+    <xs:enumeration value="BHS"/>
+    <xs:enumeration value="BIH"/>
+    <xs:enumeration value="BLM"/>
+    <xs:enumeration value="BLR"/>
+    <xs:enumeration value="BLZ"/>
+    <xs:enumeration value="BMU"/>
+    <xs:enumeration value="BOL"/>
+    <xs:enumeration value="BRA"/>
+    <xs:enumeration value="BRB"/>
+    <xs:enumeration value="BRN"/>
+    <xs:enumeration value="BTN"/>
+    <xs:enumeration value="BVT"/>
+    <xs:enumeration value="BWA"/>
+    <xs:enumeration value="CAF"/>
+    <xs:enumeration value="CAN"/>
+    <xs:enumeration value="CCK"/>
+    <xs:enumeration value="CHE"/>
+    <xs:enumeration value="CHL"/>
+    <xs:enumeration value="CHN"/>
+    <xs:enumeration value="CIV"/>
+    <xs:enumeration value="CMR"/>
+    <xs:enumeration value="COD"/>
+    <xs:enumeration value="COG"/>
+    <xs:enumeration value="COK"/>
+    <xs:enumeration value="COL"/>
+    <xs:enumeration value="COM"/>
+    <xs:enumeration value="CRI"/>
+    <xs:enumeration value="CUB"/>
+    <xs:enumeration value="CUW"/>
+    <xs:enumeration value="CXR"/>
+    <xs:enumeration value="CYM"/>
+    <xs:enumeration value="CYP"/>
+    <xs:enumeration value="CZE"/>
+    <xs:enumeration value="DEU"/>
+    <xs:enumeration value="DJI"/>
+    <xs:enumeration value="DMA"/>
+    <xs:enumeration value="DNK"/>
+    <xs:enumeration value="DOM"/>
+    <xs:enumeration value="ECU"/>
+    <xs:enumeration value="EGY"/>
+    <xs:enumeration value="ERI"/>
+    <xs:enumeration value="ESH"/>
+    <xs:enumeration value="ESP"/>
+    <xs:enumeration value="EST"/>
+    <xs:enumeration value="ETH"/>
+    <xs:enumeration value="FIN"/>
+    <xs:enumeration value="FJI"/>
+    <xs:enumeration value="FLK"/>
+    <xs:enumeration value="FRA"/>
+    <xs:enumeration value="FRO"/>
+    <xs:enumeration value="FSM"/>
+    <xs:enumeration value="GAB"/>
+    <xs:enumeration value="GBR"/>
+    <xs:enumeration value="GEO"/>
+    <xs:enumeration value="GGY"/>
+    <xs:enumeration value="GHA"/>
+    <xs:enumeration value="GIB"/>
+    <xs:enumeration value="GIN"/>
+    <xs:enumeration value="GLP"/>
+    <xs:enumeration value="GMB"/>
+    <xs:enumeration value="GNB"/>
+    <xs:enumeration value="GNQ"/>
+    <xs:enumeration value="GRC"/>
+    <xs:enumeration value="GRD"/>
+    <xs:enumeration value="GRL"/>
+    <xs:enumeration value="GTM"/>
+    <xs:enumeration value="GUF"/>
+    <xs:enumeration value="GUM"/>
+    <xs:enumeration value="GUY"/>
+    <xs:enumeration value="HKG"/>
+    <xs:enumeration value="HMD"/>
+    <xs:enumeration value="HND"/>
+    <xs:enumeration value="HRV"/>
+    <xs:enumeration value="HTI"/>
+    <xs:enumeration value="HUN"/>
+    <xs:enumeration value="IDN"/>
+    <xs:enumeration value="IMN"/>
+    <xs:enumeration value="IND"/>
+    <xs:enumeration value="IOT"/>
+    <xs:enumeration value="IRL"/>
+    <xs:enumeration value="IRN"/>
+    <xs:enumeration value="IRQ"/>
+    <xs:enumeration value="ISL"/>
+    <xs:enumeration value="ISR"/>
+    <xs:enumeration value="ITA"/>
+    <xs:enumeration value="JAM"/>
+    <xs:enumeration value="JEY"/>
+    <xs:enumeration value="JOR"/>
+    <xs:enumeration value="JPN"/>
+    <xs:enumeration value="KAZ"/>
+    <xs:enumeration value="KEN"/>
+    <xs:enumeration value="KGZ"/>
+    <xs:enumeration value="KHM"/>
+    <xs:enumeration value="KIR"/>
+    <xs:enumeration value="KNA"/>
+    <xs:enumeration value="KOR"/>
+    <xs:enumeration value="KWT"/>
+    <xs:enumeration value="LAO"/>
+    <xs:enumeration value="LBN"/>
+    <xs:enumeration value="LBR"/>
+    <xs:enumeration value="LBY"/>
+    <xs:enumeration value="LCA"/>
+    <xs:enumeration value="LIE"/>
+    <xs:enumeration value="LKA"/>
+    <xs:enumeration value="LSO"/>
+    <xs:enumeration value="LTU"/>
+    <xs:enumeration value="LUX"/>
+    <xs:enumeration value="LVA"/>
+    <xs:enumeration value="MAC"/>
+    <xs:enumeration value="MAF"/>
+    <xs:enumeration value="MAR"/>
+    <xs:enumeration value="MCO"/>
+    <xs:enumeration value="MDA"/>
+    <xs:enumeration value="MDG"/>
+    <xs:enumeration value="MDV"/>
+    <xs:enumeration value="MEX"/>
+    <xs:enumeration value="MHL"/>
+    <xs:enumeration value="MKD"/>
+    <xs:enumeration value="MLI"/>
+    <xs:enumeration value="MLT"/>
+    <xs:enumeration value="MMR"/>
+    <xs:enumeration value="MNE"/>
+    <xs:enumeration value="MNG"/>
+    <xs:enumeration value="MNP"/>
+    <xs:enumeration value="MOZ"/>
+    <xs:enumeration value="MRT"/>
+    <xs:enumeration value="MSR"/>
+    <xs:enumeration value="MTQ"/>
+    <xs:enumeration value="MUS"/>
+    <xs:enumeration value="MWI"/>
+    <xs:enumeration value="MYS"/>
+    <xs:enumeration value="MYT"/>
+    <xs:enumeration value="NAM"/>
+    <xs:enumeration value="NCL"/>
+    <xs:enumeration value="NER"/>
+    <xs:enumeration value="NFK"/>
+    <xs:enumeration value="NGA"/>
+    <xs:enumeration value="NIC"/>
+    <xs:enumeration value="NIU"/>
+    <xs:enumeration value="NLD"/>
+    <xs:enumeration value="NOR"/>
+    <xs:enumeration value="NPL"/>
+    <xs:enumeration value="NRU"/>
+    <xs:enumeration value="NZL"/>
+    <xs:enumeration value="OMN"/>
+    <xs:enumeration value="PAK"/>
+    <xs:enumeration value="PAN"/>
+    <xs:enumeration value="PCN"/>
+    <xs:enumeration value="PER"/>
+    <xs:enumeration value="PHL"/>
+    <xs:enumeration value="PLW"/>
+    <xs:enumeration value="PNG"/>
+    <xs:enumeration value="POL"/>
+    <xs:enumeration value="PRI"/>
+    <xs:enumeration value="PRK"/>
+    <xs:enumeration value="PRT"/>
+    <xs:enumeration value="PRY"/>
+    <xs:enumeration value="PSE"/>
+    <xs:enumeration value="PYF"/>
+    <xs:enumeration value="QAT"/>
+    <xs:enumeration value="REU"/>
+    <xs:enumeration value="ROU"/>
+    <xs:enumeration value="RUS"/>
+    <xs:enumeration value="RWA"/>
+    <xs:enumeration value="SAU"/>
+    <xs:enumeration value="SDN"/>
+    <xs:enumeration value="SEN"/>
+    <xs:enumeration value="SGP"/>
+    <xs:enumeration value="SGS"/>
+    <xs:enumeration value="SHN"/>
+    <xs:enumeration value="SJM"/>
+    <xs:enumeration value="SLB"/>
+    <xs:enumeration value="SLE"/>
+    <xs:enumeration value="SLV"/>
+    <xs:enumeration value="SMR"/>
+    <xs:enumeration value="SOM"/>
+    <xs:enumeration value="SPM"/>
+    <xs:enumeration value="SRB"/>
+    <xs:enumeration value="SSD"/>
+    <xs:enumeration value="STP"/>
+    <xs:enumeration value="SUR"/>
+    <xs:enumeration value="SVK"/>
+    <xs:enumeration value="SVN"/>
+    <xs:enumeration value="SWE"/>
+    <xs:enumeration value="SWZ"/>
+    <xs:enumeration value="SXM"/>
+    <xs:enumeration value="SYC"/>
+    <xs:enumeration value="SYR"/>
+    <xs:enumeration value="TCA"/>
+    <xs:enumeration value="TCD"/>
+    <xs:enumeration value="TGO"/>
+    <xs:enumeration value="THA"/>
+    <xs:enumeration value="TJK"/>
+    <xs:enumeration value="TKL"/>
+    <xs:enumeration value="TKM"/>
+    <xs:enumeration value="TLS"/>
+    <xs:enumeration value="TON"/>
+    <xs:enumeration value="TTO"/>
+    <xs:enumeration value="TUN"/>
+    <xs:enumeration value="TUR"/>
+    <xs:enumeration value="TUV"/>
+    <xs:enumeration value="TWN"/>
+    <xs:enumeration value="TZA"/>
+    <xs:enumeration value="UGA"/>
+    <xs:enumeration value="UKR"/>
+    <xs:enumeration value="UMI"/>
+    <xs:enumeration value="URY"/>
+    <xs:enumeration value="USA"/>
+    <xs:enumeration value="UZB"/>
+    <xs:enumeration value="VAT"/>
+    <xs:enumeration value="VCT"/>
+    <xs:enumeration value="VEN"/>
+    <xs:enumeration value="VGB"/>
+    <xs:enumeration value="VIR"/>
+    <xs:enumeration value="VNM"/>
+    <xs:enumeration value="VUT"/>
+    <xs:enumeration value="WLF"/>
+    <xs:enumeration value="WSM"/>
+    <xs:enumeration value="YEM"/>
+    <xs:enumeration value="ZAF"/>
+    <xs:enumeration value="ZMB"/>
+    <xs:enumeration value="ZWE"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="ISO4217CurrenciesControlled">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AED"/>
+      <xs:enumeration value="AFN"/>
+      <xs:enumeration value="ALL"/>
+      <xs:enumeration value="AMD"/>
+      <xs:enumeration value="ANG"/>
+      <xs:enumeration value="AOA"/>
+      <xs:enumeration value="ARS"/>
+      <xs:enumeration value="AUD"/>
+      <xs:enumeration value="AWG"/>
+      <xs:enumeration value="AZN"/>
+      <xs:enumeration value="BAM"/>
+      <xs:enumeration value="BBD"/>
+      <xs:enumeration value="BDT"/>
+      <xs:enumeration value="BGN"/>
+      <xs:enumeration value="BHD"/>
+      <xs:enumeration value="BIF"/>
+      <xs:enumeration value="BMD"/>
+      <xs:enumeration value="BND"/>
+      <xs:enumeration value="BOB"/>
+      <xs:enumeration value="BOV"/>
+      <xs:enumeration value="BRL"/>
+      <xs:enumeration value="BSD"/>
+      <xs:enumeration value="BTN"/>
+      <xs:enumeration value="BWP"/>
+      <xs:enumeration value="BYN"/>
+      <xs:enumeration value="BZD"/>
+      <xs:enumeration value="CAD"/>
+      <xs:enumeration value="CDF"/>
+      <xs:enumeration value="CHF"/>
+      <xs:enumeration value="CLF"/>
+      <xs:enumeration value="CLP"/>
+      <xs:enumeration value="CNY"/>
+      <xs:enumeration value="COP"/>
+      <xs:enumeration value="CRC"/>
+      <xs:enumeration value="CUP"/>
+      <xs:enumeration value="CVE"/>
+      <xs:enumeration value="CZK"/>
+      <xs:enumeration value="DJF"/>
+      <xs:enumeration value="DKK"/>
+      <xs:enumeration value="DOP"/>
+      <xs:enumeration value="DZD"/>
+      <xs:enumeration value="EGP"/>
+      <xs:enumeration value="ERN"/>
+      <xs:enumeration value="ETB"/>
+      <xs:enumeration value="EUR"/>
+      <xs:enumeration value="FJD"/>
+      <xs:enumeration value="FKP"/>
+      <xs:enumeration value="FOK"/>
+      <xs:enumeration value="GBP"/>
+      <xs:enumeration value="GEL"/>
+      <xs:enumeration value="GGP"/>
+      <xs:enumeration value="GHS"/>
+      <xs:enumeration value="GIP"/>
+      <xs:enumeration value="GMD"/>
+      <xs:enumeration value="GNF"/>
+      <xs:enumeration value="GTQ"/>
+      <xs:enumeration value="GYD"/>
+      <xs:enumeration value="HKD"/>
+      <xs:enumeration value="HNL"/>
+      <xs:enumeration value="HRK"/>
+      <xs:enumeration value="HTG"/>
+      <xs:enumeration value="HUF"/>
+      <xs:enumeration value="IDR"/>
+      <xs:enumeration value="ILS"/>
+      <xs:enumeration value="IMP"/>
+      <xs:enumeration value="INR"/>
+      <xs:enumeration value="IQD"/>
+      <xs:enumeration value="IRR"/>
+      <xs:enumeration value="ISK"/>
+      <xs:enumeration value="JEP"/>
+      <xs:enumeration value="JMD"/>
+      <xs:enumeration value="JOD"/>
+      <xs:enumeration value="JPY"/>
+      <xs:enumeration value="KES"/>
+      <xs:enumeration value="KGS"/>
+      <xs:enumeration value="KHR"/>
+      <xs:enumeration value="KID"/>
+      <xs:enumeration value="KMF"/>
+      <xs:enumeration value="KRW"/>
+      <xs:enumeration value="KWD"/>
+      <xs:enumeration value="KYD"/>
+      <xs:enumeration value="KZT"/>
+      <xs:enumeration value="LAK"/>
+      <xs:enumeration value="LBP"/>
+      <xs:enumeration value="LKR"/>
+      <xs:enumeration value="LRD"/>
+      <xs:enumeration value="LSL"/>
+      <xs:enumeration value="LYD"/>
+      <xs:enumeration value="MAD"/>
+      <xs:enumeration value="MDL"/>
+      <xs:enumeration value="MGA"/>
+      <xs:enumeration value="MKD"/>
+      <xs:enumeration value="MMK"/>
+      <xs:enumeration value="MNT"/>
+      <xs:enumeration value="MOP"/>
+      <xs:enumeration value="MRU"/>
+      <xs:enumeration value="MUR"/>
+      <xs:enumeration value="MVR"/>
+      <xs:enumeration value="MWK"/>
+      <xs:enumeration value="MXN"/>
+      <xs:enumeration value="MYR"/>
+      <xs:enumeration value="MZN"/>
+      <xs:enumeration value="NAD"/>
+      <xs:enumeration value="NGN"/>
+      <xs:enumeration value="NIO"/>
+      <xs:enumeration value="NOK"/>
+      <xs:enumeration value="NPR"/>
+      <xs:enumeration value="NZD"/>
+      <xs:enumeration value="OMR"/>
+      <xs:enumeration value="PAB"/>
+      <xs:enumeration value="PEN"/>
+      <xs:enumeration value="PGK"/>
+      <xs:enumeration value="PHP"/>
+      <xs:enumeration value="PKR"/>
+      <xs:enumeration value="PLN"/>
+      <xs:enumeration value="PYG"/>
+      <xs:enumeration value="QAR"/>
+      <xs:enumeration value="RON"/>
+      <xs:enumeration value="RSD"/>
+      <xs:enumeration value="RUB"/>
+      <xs:enumeration value="RWF"/>
+      <xs:enumeration value="SAR"/>
+      <xs:enumeration value="SBD"/>
+      <xs:enumeration value="SCR"/>
+      <xs:enumeration value="SDG"/>
+      <xs:enumeration value="SEK"/>
+      <xs:enumeration value="SGD"/>
+      <xs:enumeration value="SHP"/>
+      <xs:enumeration value="SLE"/>
+      <xs:enumeration value="SOS"/>
+      <xs:enumeration value="SRD"/>
+      <xs:enumeration value="SSP"/>
+      <xs:enumeration value="STN"/>
+      <xs:enumeration value="SYP"/>
+      <xs:enumeration value="SZL"/>
+      <xs:enumeration value="THB"/>
+      <xs:enumeration value="TJS"/>
+      <xs:enumeration value="TMT"/>
+      <xs:enumeration value="TND"/>
+      <xs:enumeration value="TOP"/>
+      <xs:enumeration value="TRY"/>
+      <xs:enumeration value="TTD"/>
+      <xs:enumeration value="TVD"/>
+      <xs:enumeration value="TWD"/>
+      <xs:enumeration value="TZS"/>
+      <xs:enumeration value="UAH"/>
+      <xs:enumeration value="UGX"/>
+      <xs:enumeration value="USD"/>
+      <xs:enumeration value="UYU"/>
+      <xs:enumeration value="UZS"/>
+      <xs:enumeration value="VES"/>
+      <xs:enumeration value="VND"/>
+      <xs:enumeration value="VUV"/>
+      <xs:enumeration value="WST"/>
+      <xs:enumeration value="XAF"/>
+      <xs:enumeration value="XCD"/>
+      <xs:enumeration value="XDR"/>
+      <xs:enumeration value="XOF"/>
+      <xs:enumeration value="XPF"/>
+      <xs:enumeration value="YER"/>
+      <xs:enumeration value="ZAR"/>
+      <xs:enumeration value="ZMW"/>
+      <xs:enumeration value="ZWL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SizeClassifierControlled">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="&lt;100"/>
+      <xs:enumeration value="101-250"/>
+      <xs:enumeration value="251-500"/>
+      <xs:enumeration value="501-1000"/>
+      <xs:enumeration value="1001-2500"/>
+      <xs:enumeration value="2501-5000"/>
+      <xs:enumeration value="5001-10000"/>
+      <xs:enumeration value="10001-25000"/>
+      <xs:enumeration value="25001-50000"/>
+      <xs:enumeration value="50001-100000"/>
+      <xs:enumeration value="100001-250000"/>
+      <xs:enumeration value="250001-500000"/>
+      <xs:enumeration value="500001-1000000"/>
+      <xs:enumeration value="1000001-2500000"/>
+      <xs:enumeration value="2500001-5000000"/>
+      <xs:enumeration value="&gt;5000001"/>    
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="LegalEntityNameFlexible">
+    <xs:union memberTypes="notUsedType xs:string"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="TaxPayerRegistrationNumberFlexible">
+    <xs:union memberTypes="notUsedType xs:int"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="notUsedType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="notUsed"/>    
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SegmentMembershipControlled">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="centralBody"/>
+      <xs:enumeration value="selfGovernedBody"/>
+      <xs:enumeration value="socialSecurityFund"/>
+      <xs:enumeration value="centralBank"/>
+      <xs:enumeration value="bank"/>
+      <xs:enumeration value="loan"/>
+      <xs:enumeration value="insurance"/>
+      <xs:enumeration value="pension"/>
+      <xs:enumeration value="investmentCompany"/>
+      <xs:enumeration value="investmentFund"/>
+      <xs:enumeration value="investmentFundHead"/>
+      <xs:enumeration value="payroll"/>
+      <xs:enumeration value="pawnshop"/>
+      <xs:enumeration value="depositeInsuranceFund"/>
+      <xs:enumeration value="regulatedMarket"/>
+      <xs:enumeration value="otherFinancial"/>
+      <xs:enumeration value="otherSupportiveFinancial"/>
+      <xs:enumeration value="nonFinancial"/>
+      <xs:enumeration value="solePropriator"/>
+      <xs:enumeration value="otherHousehold"/>
+      <xs:enumeration value="nonProfitHousehold"/>
+    <xs:enumeration value="notUsed"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ResidencyFlexible">
+    <xs:union memberTypes="ISO3166_1Alpha3CountriesControlled notUsedType"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="IntentClassifierControlled">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="selfAccounts"/>
+      <xs:enumeration value="commercial"/>
+      <xs:enumeration value="nonCommercial"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="IntentCodeControlled">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1001"/>
+      <xs:enumeration value="2010"/>
+      <xs:enumeration value="2020"/>
+      <xs:enumeration value="2031"/>
+      <xs:enumeration value="2032"/>
+      <xs:enumeration value="2033"/>
+      <xs:enumeration value="2034"/>
+      <xs:enumeration value="2035"/>
+      <xs:enumeration value="2036"/>
+      <xs:enumeration value="2037"/>
+      <xs:enumeration value="2038"/>
+      <xs:enumeration value="2041"/>
+      <xs:enumeration value="2042"/>
+      <xs:enumeration value="2043"/>
+      <xs:enumeration value="2044"/>
+      <xs:enumeration value="2051"/>
+      <xs:enumeration value="2052"/>
+      <xs:enumeration value="2061"/>
+      <xs:enumeration value="2062"/>
+      <xs:enumeration value="2063"/>
+      <xs:enumeration value="2071"/>
+      <xs:enumeration value="2072"/>
+      <xs:enumeration value="2073"/>
+      <xs:enumeration value="2074"/>
+      <xs:enumeration value="2075"/>
+      <xs:enumeration value="2076"/>
+      <xs:enumeration value="2080"/>
+      <xs:enumeration value="2090"/>
+      <xs:enumeration value="2101"/>
+      <xs:enumeration value="2102"/>
+      <xs:enumeration value="2103"/>
+      <xs:enumeration value="2111"/>
+      <xs:enumeration value="2112"/>
+      <xs:enumeration value="2120"/>
+      <xs:enumeration value="2230"/>
+      <xs:enumeration value="2900"/>
+      <xs:enumeration value="3010"/>
+      <xs:enumeration value="3021"/>
+      <xs:enumeration value="3022"/>
+      <xs:enumeration value="3023"/>
+      <xs:enumeration value="3024"/>
+      <xs:enumeration value="3030"/>
+      <xs:enumeration value="4010"/>
+      <xs:enumeration value="4020"/>
+      <xs:enumeration value="5010"/>
+      <xs:enumeration value="5020"/>
+      <xs:enumeration value="5030"/>
+      <xs:enumeration value="5040"/>
+      <xs:enumeration value="6010"/>
+      <xs:enumeration value="6020"/>
+      <xs:enumeration value="6030"/>
+      <xs:enumeration value="6040"/>
+      <xs:enumeration value="6110"/>
+      <xs:enumeration value="6120"/>
+      <xs:enumeration value="6130"/>
+      <xs:enumeration value="6210"/>
+      <xs:enumeration value="6220"/>
+      <xs:enumeration value="6230"/>
+      <xs:enumeration value="6310"/>
+      <xs:enumeration value="6410"/>
+      <xs:enumeration value="notUsed"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

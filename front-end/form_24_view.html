@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form_24_style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">
+        Ձև 24, համար «<span id="form-number" contenteditable="true">№</span>» հայտի լրացում
+    </h1>
+    <form action="/submit" id="24form" method="POST">
+        <label for="field-1">1. Փոխանցման կամ ստացման բնույթ</label>
+        <select id="field-1" name="field-1-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-2">2. Փոխանցողի կամ ստացողի իրավական կարգավիճակ</label>
+        <select id="field-2" name="field-2-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-3">3. Գործարքի տեսակ</label>
+        <select id="field-3" name="field-3-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-4">4. Փոխանցման կամ ստացման եղանակ</label>
+        <select id="field-4" name="field-4-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-5">5. Փոխանցման կամ ստացման միջոց կամ համակարգ</label>
+        <select id="field-5" name="field-5-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <label for="field-5-extra" style="display: none;">Լրացման դաշտ</label>
+        <input type="text" id="field-5-extra" name="field-5-extra-choice" hidden disabled>
+        <hr>
+        <label for="field-6">6. Փոխանցման կամ ստացման կատարման համար կիրառվող կապի միջոց</label>
+        <select id="field-6" name="field-6-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-7">7. Փոխանցման մարզ</label>
+        <select id="field-7" name="field-7-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-8">8. Ստացման մարզ</label>
+        <select id="field-8" name="field-8-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-9">9. Փոխանցման կամ ստացման երկրի կոդ</label>
+        <select id="field-9" name="field-9-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-10">10. Փոխանցման կամ ստացման գումար</label>
+        <input type="text" id="field-10" name="field-10-choice" required>
+        <hr>
+        <label for="field-11">11. Փոխանցման կամ ստացման արժույթի կոդ</label>
+        <select id="field-11" name="field-11-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-12">12. Փոխանցման կամ ստացման գումարն արտահայտված ԱՄՆ դոլարով (հազար դոլար)</label>
+        <input type="text" id="field-12" name="field-12-choice" required>
+        <hr>
+        <label for="field-13">13. Փոխանցման կամ ստացման գումարի մեծության դասակարգիչ (ԱՄՆ դոլարին համարժեք)</label>
+        <select id="field-13" name="field-13-choice" required disabled>
+        </select>
+        <hr>
+        <label for="field-14">14. Փոխանցող կամ ստացող իրավաբանական անձի անվանում</label>
+        <select id="field-14" name="field-14-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <label for="field-14-extra" style="display: none;">Լրացման դաշտ</label>
+        <input type="text" id="field-14-extra" name="field-14-extra-choice" hidden disabled>
+        <hr>
+        <label for="field-15">15. Փոխանցող կամ ստացող իրավաբանական անձի  ՀՎՀՀ</label>
+        <select id="field-15" name="field-15-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <label for="field-15-extra" style="display: none;">Լրացման դաշտ</label>
+        <input type="text" id="field-15-extra" name="field-15-extra-choice" hidden disabled>
+        <hr>
+        <label for="field-16">16. Փոխանցողի կամ ստացողի հատվածային պատկանելիություն</label>
+        <select id="field-16" name="field-16-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-17">17. Փոխանցողի կամ ստացողի ռեզիդենտության երկիր</label>
+        <select id="field-17" name="field-17-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-18">18. Փոխանցման կամ ստացման գործարքի կողմ հանդիսացող իրավաբանական անձի անվանում</label>
+        <select id="field-18" name="field-18-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <label for="field-18-extra" style="display: none;">Լրացման դաշտ</label>
+        <input type="text" id="field-18-extra" name="field-18-extra-choice" hidden disabled>
+        <hr>
+        <label for="field-19">19. Փոխանցման կամ ստացման գործարքի կողմ հանդիսացողի ռեզիդենտության երկիր</label>
+        <select id="field-19" name="field-19-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-20">20. Փոխանցման կամ ստացման գործարքի կողմ հանդիսացողի իրավական կարգավիճակ</label>
+        <select id="field-20" name="field-20-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-21">21. Փոխանցման կամ ստացման նպատակի դասակարգում</label>
+        <select id="field-21" name="field-21-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-22">22. Փոխանցման կամ ստացման նպատակի կոդ</label>
+        <select id="field-22" name="field-22-choice" required>
+            <option value="" disabled selected hidden>Ընտրել տարբերակ</option>
+        </select>
+        <hr>
+        <label for="field-23">23. Փոխանցման կամ ստացման քանակ</label>
+        <input type="text" id="field-23" name="field-23-choice" min="1" required>
+        <hr>
+        <label for="field-24">24. Փոխանցման կամ ստացման դիմաց վճարված միջնորդավճար</label>
+        <input type="text" id="field-24" name="field-24-choice" required>
+
+
+        <button type="submit" id="submit">Ուղարկել</button>
+        <button type="button" id="save" hidden>Պահպանել</button>
+        <button type="button" id ="delete" hidden>Ջնջել</button>
+        <a id="download">Download</a>
+
+    </form>
+
+
+    <script src="form_value_enums.js" type="module"></script>
+    <script src="utils/fill_options_in_select.js" type="module"></script>
+
+    <script src="form_fillers/form_1.js" type="module"></script>
+    <script src="form_fillers/form_2.js" type="module"></script>
+    <script src="form_fillers/form_3.js" type="module"></script>
+    <script src="form_fillers/form_4.js" type="module"></script>
+    <script src="form_fillers/form_5.js" type="module"></script>
+    <script src="form_fillers/form_6.js" type="module"></script>
+    <script src="form_fillers/form_7.js" type="module"></script>
+    <script src="form_fillers/form_8.js" type="module"></script>
+    <script src="form_fillers/form_9.js" type="module"></script>
+    <script src="form_fillers/form_11.js" type="module"></script>
+    <script src="form_fillers/form_13.js" type="module"></script>
+    <script src="form_fillers/form_14.js" type="module"></script>
+    <script src="form_fillers/form_15.js" type="module"></script>
+    <script src="form_fillers/form_16.js" type="module"></script>
+    <script src="form_fillers/form_17.js" type="module"></script>
+    <script src="form_fillers/form_18.js" type="module"></script>
+    <script src="form_fillers/form_19.js" type="module"></script>
+    <script src="form_fillers/form_20.js" type="module"></script>
+    <script src="form_fillers/form_21.js" type="module"></script>
+    <script src="form_fillers/form_22.js" type="module"></script>
+
+    <script src="form_events/form_1.js" type="module"></script>
+    <script src="form_events/form_2.js" type="module"></script>
+    <script src="form_events/form_3.js" type="module"></script>
+    <script src="form_events/form_5.js" type="module"></script>
+    <script src="form_events/form_10.js" type="module"></script>
+    <script src="form_events/form_12.js" type="module"></script>
+    <script src="form_events/form_14.js" type="module"></script>
+    <script src="form_events/form_15.js" type="module"></script>
+    <script src="form_events/form_18.js" type="module"></script>
+    <script src="form_events/form_21.js" type="module"></script>
+    <script src="form_events/submit.js" type="module"></script>
+    <script src="form_events/save.js" type="module"></script>
+    <script src="form_events/delete.js" type="module"></script>
+
+    <script src="new_form_number.js" type="module"></script>
+</body>
+</html>

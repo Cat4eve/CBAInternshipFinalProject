@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.5rem;          /* Big and noticeable */
+    color: #2c3e50;             /* Dark blue-gray color */
+    text-align: center;          /* Centered on the page */
+    margin: 1.5rem 0;            /* Space above and below */
+    text-transform: uppercase;   /* All caps for emphasis */
+    letter-spacing: 2px;         /* Space out letters */
+    font-weight: 700;            /* Bold */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
+
+#form-number {
+  color: #3498db;        /* highlight color */
+  font-weight: bold;     /* emphasize */
+  padding: 2px 4px;      /* small padding */
+  border-bottom: 1px dashed #3498db; /* subtle underline for editability hint */
+  display: inline-block;
+  min-width: 30px;       /* keep width for empty input */
+}
+#form-number:focus {
+  outline: none;
+  border-bottom: 2px solid #3498db;
+}
+
+form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+/* Improved Dropdown Styles */
+select {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #007bff;
+    background-color: #f9f9f9;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='7'><polygon points='0,0 12,0 6,7' fill='%23007bff'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 12px 7px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+select:hover {
+    background-color: #f0f8ff;
+}
+
+select:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+    outline: none;
+}
+
+button {
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
