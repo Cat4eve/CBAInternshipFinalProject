@@ -10,7 +10,7 @@ export const MethodOfTransfer = {
 };
 
 export const TransferSystem = {
-    'freeTyping': 'Ազատ մուտքագրում',
+    'freeTyping': 'Արագ Փոխանցումների Համակարգի Անվանումը',
     'correspondentAccounts': 'Բանկի Թղթակցային Հաշիվներով',
     'foreignBranches': 'Բանկի Արտասահմանյան Մասնաճյուղերով',
 };

@@ -58,8 +58,8 @@ form1choiceElement.addEventListener('change', function() {
         form8choiceElement.disabled = false;
     }
 
-    if (form1choiceElement.value == 'intercountry' || form5choiceElement.value == 'freeTyping' ||
-        parseFloat(form12choiceElement.value) < 20000
+    if (this.value == 'intercountry' || form5choiceElement.value == 'freeTyping' ||
+        parseFloat(Number(form12choiceElement.value)) < 20000
     ) {
         form14choiceElement.value = 'notUsed';
         form14choiceElement.disabled = true;

@@ -38,7 +38,7 @@ form12choiceElement.addEventListener('change', function() {
     }
 
     if (form1choiceElement.value == 'intercountry' || form5choiceElement.value == 'freeTyping' ||
-        parseFloat(form12choiceElement.value) < 20000
+        parseFloat(Number(form12choiceElement.value)) < 20000
     ) {
         form14choiceElement.value = 'notUsed';
         form14choiceElement.disabled = true;

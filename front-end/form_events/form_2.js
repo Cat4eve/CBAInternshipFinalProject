@@ -40,7 +40,6 @@ form2choiceElement.addEventListener('change', function() {
     }
 
     if (this.value == 'legalEntity' && form21choiceElement.value == 'nonCommercial') {
-        console.log("a")
         for (let i = form22choiceElement.options.length - 1; i >= 0; i--) {
             const numericKeyFromValue = parseInt(Object.keys(IntentCode).find(key => 
                 key === form22choiceElement.options[i].value
@@ -61,16 +60,16 @@ form2choiceElement.addEventListener('change', function() {
         form22choiceElement.value = "";
     }
 
-    if (form1choiceElement.value != 'intercountry' && form5choiceElement.value != 'freeTyping' &&
-        parseFloat(form12choiceElement.value) >= 20000
-    ) {
-        if (this.value == 'solePropriator') {
-            form14choiceElement.value = 'notUsed';
-            form14choiceElement.disabled = true;
+    if (this.value == 'solePropriator' || this.value == 'naturalPerson') {
+        form14choiceElement.value = 'notUsed';
+        form14choiceElement.disabled = true;
 
-            form15choiceElement.value = 'notUsed';
-            form15choiceElement.disabled = true;
-        } else {
+        form15choiceElement.value = 'notUsed';
+        form15choiceElement.disabled = true;
+    } else {
+        if (form1choiceElement.value != 'intercountry' && form5choiceElement.value != 'freeTyping' &&
+            parseFloat(Number(form12choiceElement.value)) >= 20000
+        ) {
             let tempOption = new Option("Ընտրել Տարբերակ", "", true, true);
             tempOption.disabled = true;
             tempOption.hidden = true;

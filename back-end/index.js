@@ -8,8 +8,11 @@ const { XMLParser } = require('fast-xml-parser');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require("cors");
-const { validateXML } = require('xsd-schema-validator');
+const fs = require("fs");
+const libxmljs = require("libxmljs2");
 
+
+const XSD_FILE = path.join(__dirname, "MODS.xsd");
 const DB_PATH = process.env.DB_PATH || path.join(__dirname, 'data.sqlite');
 const PORT = process.env.PORT || 3000;
 
@@ -193,6 +196,55 @@ function placeholdersList(n) {
   return new Array(n).fill('?').join(', ');
 }
 
+function hardCheckValidation(record) {
+  if (
+    record.moneyToUSD < 20000 ||
+    (record.transferSystem != 'correspondentAccounts' && record.transferSystem != 'foreignBranch') ||
+    record.transferType == 'intercountry'
+  ) {
+    if (false) return false;
+  }
+
+  if (record.intentClassifier == 'selfAccounts') {
+    if (record.transferSystem != 'correspondentAccounts') return false; 
+  }
+
+  if (record.intentClassifier == 'selfAccounts' && record.legalStatus == 'legalEntity') {
+    if (record.legalEntityName != record.sideLegalEntityName) return false; 
+  }
+
+  if (record.transferAmount <= 0) {
+    return false; 
+  }
+
+  if (record.legalStatus == 'legalEntity') {
+    if (record.taxPayerRegistrationNumber.length != 8) return false;
+    if (record.intentCode == 3010) return false;
+  }
+
+  if (record.legalStatus == 'legalEntity' && record.intentClassifier == 'nonCommercial') {
+    if (record.intentCode < 4000 || record.intentCode >= 6000) return false;
+  }
+
+  if (record.transferType == 'international') {
+    if (record.ISO3166_1Alpha3Countries == 'ARM') return false;
+  }
+
+  if (record.transferType == 'international' && record.transactionType == 'received') {
+    if (record.senderRegion != 'notUsed') return false;
+  }
+
+  if (record.transferType == 'international' && record.transactionType == 'sent') {
+    if (record.receiverRegion != 'notUsed') return false;
+  }
+
+  if (record.legalStatus == 'solePropriator' || record.legalStatus == 'naturalPerson') {
+    if (record.legalEntityName != 'notUsed' || record.taxPayerRegistrationNumber != 'notUsed') return false;
+  }
+
+  return true;
+}
+
 // --- CRUD routes ------------------------------------------------------------
 app.get('/transactions/next-id', async (req, res) => {
   try {
@@ -210,16 +262,51 @@ app.get('/transactions/next-id', async (req, res) => {
 
 app.post('/transactions', async (req, res) => {
   try {
-    const record = coerceBodyToRecord(req);
-    console.log(validateXML(record));
-    const cols = Object.values(WRAPPER_MAP);
-    const sql = `INSERT INTO transactions (${columnsList()}) VALUES (${placeholdersList(cols.length)})`;
-    const params = cols.map((c) => record[c] ?? null);
-    const { lastID } = await run(db, sql, params);
-    const created = await get(db, 'SELECT * FROM transactions WHERE id = ?', [lastID]);
-    res.status(201).json(created);
+    if (typeof req.body !== "string") {
+      return res.status(400).json({ error: "Expected XML body" });
+    }
+
+    try {
+      // Load schema (relative path)
+      const xsdContent = fs.readFileSync(XSD_FILE, "utf8");
+      const schema = libxmljs.parseXml(xsdContent);
+
+      // Parse the XML string
+      const xmlDoc = libxmljs.parseXml(req.body);
+
+      // Validate against schema
+      const isValid = xmlDoc.validate(schema);
+
+      if (!isValid) {
+        return res.status(400).json({
+          error: "XML failed validation",
+          details: xmlDoc.validationErrors.map(e => e.message)
+        });
+      }
+
+      // If valid, parse into record
+      const record = parseModsXML(req.body);
+
+      const hardCheckValidated = hardCheckValidation(record);
+      console.log(hardCheckValidated);
+      if (!hardCheckValidated) return;
+
+      const cols = Object.values(WRAPPER_MAP);
+      const sql = `INSERT INTO transactions (${columnsList()}) VALUES (${placeholdersList(cols.length)})`;
+      const params = cols.map((c) => record[c] ?? null);
+
+      const { lastID } = await run(db, sql, params);
+      const created = await get(db, 'SELECT * FROM transactions WHERE id = ?', [lastID]);
+      return res.status(201).json(created);
+
+    } catch (parseErr) {
+      console.error("Validation/Parse error:", parseErr);
+      return res.status(400).json({ error: "Failed to validate XML", details: parseErr.message });
+    }
+
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    console.error("Unexpected error:", err);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 
