@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods>
+  <transferTypeInfo type="field_1_choice"><transferType>interbank</transferType></transferTypeInfo>
+  <legalStatusInfo type="field_2_choice"><legalStatus>legalEntity</legalStatus></legalStatusInfo>
+  <transactionTypeInfo type="field_3_choice"><transactionType>received</transactionType></transactionTypeInfo>
+  <methodOfTransferInfo type="field_4_choice"><methodOfTransfer>bankAccount</methodOfTransfer></methodOfTransferInfo>
+  <transferSystemInfo type="field_5_choice"><transferSystem>sepa</transferSystem></transferSystemInfo>
+  <communicationTypeInfo type="field_6_choice"><communicationType>secureMessage</communicationType></communicationTypeInfo>
+  <senderRegionInfo type="field_7_choice"><senderRegion>lori</senderRegion></senderRegionInfo>
+  <receiverRegionInfo type="field_8_choice"><receiverRegion>syunik</receiverRegion></receiverRegionInfo>
+  <ISO3166_1Alpha3CountriesInfo type="field_9_choice"><ISO3166_1Alpha3Countries>DEU</ISO3166_1Alpha3Countries></ISO3166_1Alpha3CountriesInfo>
+  <moneyInfo type="field_10_choice"><money>10000</money></moneyInfo>
+  <ISO4217CurrenciesInfo type="field_11_choice"><ISO4217Currencies>EUR</ISO4217Currencies></ISO4217CurrenciesInfo>
+  <moneyToUSDInfo type="field_12_choice"><moneyToUSD>11000</moneyToUSD></moneyToUSDInfo>
+  <sizeClassifierInfo type="field_13_choice"><sizeClassifier>1000-10000</sizeClassifier></sizeClassifierInfo>
+  <legalEntityNameInfo type="field_14_choice"><legalEntityName>GlobalBank</legalEntityName></legalEntityNameInfo>
+  <taxPayerRegistrationNumberInfo type="field_15_choice"><taxPayerRegistrationNumber>DE123456</taxPayerRegistrationNumber></taxPayerRegistrationNumberInfo>
+  <segmentMembershipInfo type="field_16_choice"><segmentMembership>banking</segmentMembership></segmentMembershipInfo>
+  <residencyInfo type="field_17_choice"><residency>DEU</residency></residencyInfo>
+  <sideLegalEntityNameInfo type="field_18_choice"><sideLegalEntityName>PartnerBank</sideLegalEntityName></sideLegalEntityNameInfo>
+  <sideResidencyInfo type="field_19_choice"><sideResidency>CHE</sideResidency></sideResidencyInfo>
+  <sideLegalStatusInfo type="field_20_choice"><sideLegalStatus>legalEntity</sideLegalStatus></sideLegalStatusInfo>
+  <intentClassifierInfo type="field_21_choice"><intentClassifier>loan</intentClassifier></intentClassifierInfo>
+  <intentCodeInfo type="field_22_choice"><intentCode>LN789</intentCode></intentCodeInfo>
+  <transferAmountInfo type="field_23_choice"><transferAmount>10000</transferAmount></transferAmountInfo>
+  <sidePaymentInfo type="field_24_choice"><sidePayment>200</sidePayment></sidePaymentInfo>
+</mods>

@@ -10,7 +10,7 @@ const form9choiceElement = document.getElementById('field-9');
 const form12choiceElement = document.getElementById('field-12');
 const form14choiceElement = document.getElementById('field-14');
 const form15choiceElement = document.getElementById('field-15');
-const form16choiceElement = document.getElementById('field-16');
+const form17choiceElement = document.getElementById('field-17');
 const form18choiceElement = document.getElementById('field-18');
 const form22choiceElement = document.getElementById('field-22');
 
@@ -67,8 +67,8 @@ form1choiceElement.addEventListener('change', function() {
         form15choiceElement.value = 'notUsed';
         form15choiceElement.disabled = true;
 
-        form16choiceElement.value = 'notUsed';
-        form16choiceElement.disabled = true;
+        form17choiceElement.value = 'notUsed';
+        form17choiceElement.disabled = true;
 
         form18choiceElement.value = 'notUsed';
         form18choiceElement.disabled = true;
@@ -93,9 +93,9 @@ form1choiceElement.addEventListener('change', function() {
         tempOption = new Option("Ընտրել Տարբերակ", "", true, true);
         tempOption.disabled = true;
         tempOption.hidden = true;
-        form16choiceElement.add(tempOption);
-        form16choiceElement.value = "";
-        form16choiceElement.disabled = false;
+        form17choiceElement.add(tempOption);
+        form17choiceElement.value = "";
+        form17choiceElement.disabled = false;
 
         tempOption = new Option("Ընտրել Տարբերակ", "", true, true);
         tempOption.disabled = true;

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods>
+  <transferTypeInfo type="field_1_choice"><transferType>international</transferType></transferTypeInfo>
+  <legalStatusInfo type="field_2_choice"><legalStatus>legalEntity</legalStatus></legalStatusInfo>
+  <transactionTypeInfo type="field_3_choice"><transactionType>received</transactionType></transactionTypeInfo>
+  <methodOfTransferInfo type="field_4_choice"><methodOfTransfer>cryptocurrency</methodOfTransfer></methodOfTransferInfo>
+  <transferSystemInfo type="field_5_choice"><transferSystem>blockchain</transferSystem></transferSystemInfo>
+  <communicationTypeInfo type="field_6_choice"><communicationType>api</communicationType></communicationTypeInfo>
+  <senderRegionInfo type="field_7_choice"><senderRegion>vahevan</senderRegion></senderRegionInfo>
+  <receiverRegionInfo type="field_8_choice"><receiverRegion>ararat</receiverRegion></receiverRegionInfo>
+  <ISO3166_1Alpha3CountriesInfo type="field_9_choice"><ISO3166_1Alpha3Countries>JPN</ISO3166_1Alpha3Countries></ISO3166_1Alpha3CountriesInfo>
+  <moneyInfo type="field_10_choice"><money>2</money></moneyInfo>
+  <ISO4217CurrenciesInfo type="field_11_choice"><ISO4217Currencies>BTC</ISO4217Currencies></ISO4217CurrenciesInfo>
+  <moneyToUSDInfo type="field_12_choice"><moneyToUSD>60000</moneyToUSD></moneyToUSDInfo>
+  <sizeClassifierInfo type="field_13_choice"><sizeClassifier>&gt;10000</sizeClassifier></sizeClassifierInfo>
+  <legalEntityNameInfo type="field_14_choice"><legalEntityName>SatoshiExchange</legalEntityName></legalEntityNameInfo>
+  <taxPayerRegistrationNumberInfo type="field_15_choice"><taxPayerRegistrationNumber>JP998877</taxPayerRegistrationNumber></taxPayerRegistrationNumberInfo>
+  <segmentMembershipInfo type="field_16_choice"><segmentMembership>crypto</segmentMembership></segmentMembershipInfo>
+  <residencyInfo type="field_17_choice"><residency>JPN</residency></residencyInfo>
+  <sideLegalEntityNameInfo type="field_18_choice"><sideLegalEntityName>MtGox</sideLegalEntityName></sideLegalEntityNameInfo>
+  <sideResidencyInfo type="field_19_choice"><sideResidency>USA</sideResidency></sideResidencyInfo>
+  <sideLegalStatusInfo type="field_20_choice"><sideLegalStatus>legalEntity</sideLegalStatus></sideLegalStatusInfo>
+  <intentClassifierInfo type="field_21_choice"><intentClassifier>trading</intentClassifier></intentClassifierInfo>
+  <intentCodeInfo type="field_22_choice"><intentCode>CRP88</intentCode></intentCodeInfo>
+  <transferAmountInfo type="field_23_choice"><transferAmount>2</transferAmount></transferAmountInfo>
+  <sidePaymentInfo type="field_24_choice"><sidePayment>100</sidePayment></sidePaymentInfo>
+</mods>
