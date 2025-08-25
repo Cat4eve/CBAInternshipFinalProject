@@ -52,5 +52,5 @@ function validateXMLandHardCheck(xmlPath) {
 
 for (let i = 1; i <= 5; i++) {
     const XSDValidation = validateXMLandHardCheck(`./instance_${i}.xml`);
-    console.log(`Validation #${i} - Results in: ${XSDValidation}`);
+    console.log(`Validation #${i} - Results is: ${XSDValidation ? 'valid' : 'invalid'}`);
 }
